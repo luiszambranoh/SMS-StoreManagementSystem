@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="sale.html">Venta</a></li>
+            <li><a href="reports.html">Reportes</a></li>
+            <li id="dropdown"><a>Administrar</a>
+                <div class="dropdown-elements">
+                    <a href="product.html" class="dropdown-content dropdown">Products</a>
+                    <a href="client.html" class="dropdown-content dropdown">Clients</a>
+                </div>
+            </li>
+            <li><a href="inventory.html">Inventario</a></li>
+        </ul>
+    </div>
+
+<h1 class="title">Productos</h1>
+
+<div class="container">
+
+    <div class="productInfo">
+
+        <div class="inputbox">
+            <span>ID</span>
+            <input type="number" id="id" required>
+        </div>
+        <div class="inputbox">
+            <span>Nombre</span>
+            <input type="text" id="name" required>
+        </div>
+        <div class="inputbox">
+            <span>Precio</span>
+            <input type="number" id="cost" readonly>
+            <span id="currentCurrency" class="currencyLabel">$</span>
+        </div>
+        <div class="inputbox">
+            <span>Categoria</span>
+            <select class="category">
+
+            </select>
+            <button class="btn add" id="add"><i class="fa fa-plus"></i>Producto</button>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <h3>Categorias</h3>
+        <button class="btn add" id="addCategory"><i class="fa fa-plus"></i>Agregar</button>
+        <button class="btn remove" id="removeCategory"><i class="fa fa-trash"></i>Remover</button>
+    </div>
+
+    
+<div class="tablecontainer">
+    <table class="table">
+        <thead>
+            <th id="idcolumn">ID</th>
+            <th id="quantitycolumn">Cantidad</th>
+            <th id="namecolumn">Nombre</th>
+            <th id="pricecolumn">Precio</th>
+            <th id="categorycolumn">Categoria</th>
+        </thead>
+        <tbody id="tablebody">
+            <tr>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="productsData">
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores error voluptates, perspiciatis molestias nobis ex magni eius ducimus accusantium, facere unde? Nostrum labore reprehenderit nemo nam, facilis incidunt quibusdam debitis?</p>
+</div>
+
+</div>
+
+<dialog id="addItemDialog" class="custom-dialog">
+    <form method="dialog" class="dialog-form" id="dialogForm">
+        <h2 class="dialog-title">Nuevo Producto</h2>
+        <div class="custom-inputbox">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="custom-inputbox number">
+            <label for="price">Precio:</label>
+            <input type="number" id="price" name="price" step="0.01" placeholder="0.00" required>
+        </div>
+        <div class="custom-inputbox">
+            <label for="category">Categorias:</label>
+            <select id="category" name="category" class="category" required>
+                
+            </select>
+        </div>
+        <div class="dialog-actions">
+            <button class="dialog-btn" value="cancel">Cerrar</button>
+            <button class="dialog-btn" id="clear" type="reset">Limpiar</button>
+            <button class="dialog-btn" type="submit" id="addProduct">Agregar Producto</button>
+        </div>
+    </form>
+</dialog>
+<!-- CATEGORY DIALOG -->
+<dialog id="addCategoryDialog" class="custom-dialog">
+    <form method="dialog" class="dialog-form" id="categoryForm">
+        <h2 class="dialog-title ">Nueva Categoria</h2>
+        <div class="custom-inputbox categoryInput">
+            <label for="name">Nombre:</label>
+            <input type="text" id="name" name="name" required>
+        </div>
+        <div class="custom-inputbox categoryInput">
+            <label for="category">Unidades:</label>
+            <select id="category" name="category" required>
+                <option>Unidad</option>
+                <option disabled>Comunes</option>
+                <option>Gramos</option>
+                <option>Litros</option>
+            </select>
+        </div>
+        <div class="dialog-actions">
+            <button class="dialog-btn" value="cancel" id="closeCategory">Cerrar</button>
+            <button class="dialog-btn" id="clear" type="reset">Limpiar</button>
+            <button class="dialog-btn" type="submit" id="addProduct">Agregar Producto</button>
+        </div>
+    </form>
+</dialog>
+<!-- DELETE CATEGORIES -->
+<dialog id="removeCategoryDialog" class="custom-dialog">
+    <form method="dialog" class="dialog-form" id="removeCategoryForm">
+        <h2 class="dialog-title ">Selecciona la Categoria</h2>
+        <div class="categoryInput">
+            <span>Categoria</span>
+            <select class="category" id="categoryInput">
+
+            </select>
+        </div>
+        <button class="btn remove" id="removeCategory"><i class="fa fa-trash"></i>Remover</button>
+    </form>
+</dialog>
+
+<!-- ARE YOU SURE? -->
+<dialog id="areyousure" class="custom-dialog">
+        <h1 id="removeMessage">Quieres eliminar </h1>
+        <button class="btn remove" id="removeProduct"><i class="fa fa-trash"></i>Remover</button>
+</dialog>
+<!-- EDIT PRODUCT -->
+<dialog id="editProduct" class="custom-dialog">
+<form id="editProductForm">
+    <h1 id="editMessage"></h1>
+    <div class="inputbox">
+        <span>ID</span>
+        <input type="number" id="id" class="edit-input" readonly>
+    </div>
+    <div class="inputbox">
+        <span>Nombre</span>
+        <input type="text" id="name" class="edit-input" required>
+    </div>
+    <div class="inputbox">
+        <span>Precio</span>
+        <input type="number" id="cost" class="edit-input" name="price" step="0.01" placeholder="0.00" required>
+    </div>
+    <div class="inputbox">
+        <span>Categoria</span>
+        <select id="category" name="category" class="category edit-input">
+            
+        </select>
+    </div>
+    
+    <button class="btn modify" id="modifyProduct" type="submit"><i class="fa fa-edit"></i>Modificar</button>
+</form>
+</dialog>
+
+<script type="module" src="./js/product.js" ></script>
+<script type="module" src="./js/pages/productPage.js"></script>
+<script type="module" src="./js/pages/productDialog.js"></script>
+<script type="module" src="./js/pages/categoryDialogs.js"></script>
+
+</body>
+</html>

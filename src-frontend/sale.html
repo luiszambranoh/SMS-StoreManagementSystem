@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+
+    <link rel="stylesheet" href="css/index/index.css">
+    <link rel="stylesheet" href="css/reports.css">
+</head>
+<body>
+    <div class="sidebar" id="sidebar">
+        <div class="links">
+            <a href="reports.html">Reportes</a>
+            <a href="sale.html">Venta</a>
+            <a href="product.html">Productos</a>
+            <a href="inventory.html">Inventario</a>
+        </div>
+    </div>
+    
+
+<div class="container">
+    <h1 class="header"> Productos </h1>
+    <table class="productInfo">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Cant.</th>
+                <th>Precio</th>
+            </tr>
+        </thead>
+        <tbody>
+            <form id="addProductForm">
+                <td>
+                    <input class="input" type="number" step="1" id="productID" required>
+                </td>
+                <td><input class="input" type="text" id="productName"></td>
+                <td><input class="input" type="number" step="1" id="productQuantity" required></td>
+                <td><input class="input" type="text" readonly id="productPrice" ></td>
+                <td><button class="addButton" id="addProductBtn" type="submit">Anadir Producto</button></td>
+            </form>
+        </tbody>
+    </table>
+
+    <h1 class="header"> Venta </h1>
+    
+    <strong style="font-size: large; margin-right: 20px;">Metodo de pago:</strong>
+    <select id="paymentMethod" class="input">
+        <option disabled selected>Metodo de pago</option>
+        <option>Efectivo</option>
+        <option>Pago Movil</option>
+        <option>Punto</option>
+    </select>
+    <button class="button" id="executeSale">Ejecutar Venta</button>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cant.</th>
+                <th>Nombre</th>
+                <th>Costo</th>
+                <th>Sub Total</th>
+            </tr>
+        </thead>
+        <tbody id="saleTable">
+            
+        </tbody>
+        <tbody>
+            <tr>
+                <th></th>
+                <th></th>
+                <th>Total</th>
+                <th id="totalRow"></th>
+            </tr>
+        </tbody>
+    </table>
+    
+</div>
+
+    <script type="module" src="./js/sales.js"></script>
+    <script type="module" src="./js/salesProductFind.js"></script>
+    
+</body>
+</html>

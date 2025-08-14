@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+    <link rel="stylesheet" href="css/index/index.css">
+    <link rel="stylesheet" href="css/inventory.css">
+</head>
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <div class="links">
+            <a href="reports.html">Reportes</a>
+            <a href="sale.html">Venta</a>
+            <a href="product.html">Productos</a>
+            <a href="inventory.html">Inventario</a>
+        </div>
+    </div>
+    
+
+<div class="container">
+    <h1 class="header">Inventario</h1>
+
+    <div class="stockers">
+        <button class="addButton" id="addStocker">Añadir Proveedor</button>
+
+        <table class="table">
+            <thead>
+                <th>Nombre</th>
+                <th>Telefono</th>
+                <th>Correo</th>
+            </thead>
+            <tbody id="stockersTable"></tbody>
+        </table>
+    </div>
+
+    <button class="addButton" id="addStock">Abastecer</button>
+
+    <table class="table stocks">
+        <thead>
+            <th>Fecha</th>
+            <th>Proveedor</th>
+            <th>Productos</th>
+            <th>Inversion</th>
+        </thead>
+        <tbody id="stocksTable"></tbody>
+    </table>
+
+</div>
+
+<script type="module" src="./js/inventory.js"></script>
+
+</body>
+</html>

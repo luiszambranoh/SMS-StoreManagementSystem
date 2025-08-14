@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS</title>
+    <link rel="stylesheet" href="css/index/index.css">
+
+</head>
+<body>
+
+    <div class="sidebar" id="sidebar">
+        <div class="links">
+            <a href="reports.html">Reportes</a>
+            <a href="sale.html">Venta</a>
+            <a href="product.html">Productos</a>
+            <a href="inventory.html">Inventario</a>
+        </div>
+    </div>
+    
+
+<div class="container">
+
+    <h1 class="header">Ventas</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Fecha</th>
+                <th>Hora</th>
+                <th>Cliente</th>
+                <th>Metodo de pago</th>
+                <th>Total</th>
+            </tr>
+        </thead>
+        <tbody id="tablebody">
+        </tbody>
+    </table>
+
+</div>
+
+<dialog id="showSale" class="dialog">
+    <h1 class="header">Informacion</h1>
+    <table class="table">
+        <thead>
+            <th>Fecha</th>
+            <th>Hora</th>
+            <th>Cliente</th>
+            <th>Metodo de pago</th>
+        </thead>
+        <tbody id="saleInfoTable">
+        </tbody>
+    </table>
+    <h1 class="header">Venta</h1>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Cant.</th>
+                <th>Producto</th>
+                <th>Precio</th>
+                <th>Subtotal</th>
+            </tr>
+        </thead>
+        <tbody id="modalTable">
+        </tbody>
+    </table>
+
+</dialog>
+    
+<script type="module" src="./js/reports.js"></script>
+
+</body>
+</html>

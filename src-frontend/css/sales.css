@@ -1,0 +1,142 @@
+.container {
+    margin-left: 15px;
+    margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+h1 {
+    font-size: 1.7rem;
+    margin: 0;
+    text-align: center;
+}
+
+/*----------PRODUCT INPUT----------------------*/
+
+table.productInfo {
+    width: 80%;
+    border-collapse: collapse;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9;
+}
+
+table.productInfo th, table.productInfo td {
+    padding: 8px 12px;
+    border: 1px solid #ccc;
+}
+
+table.productInfo th {
+    background-color: #e9e9e9;
+}
+
+table.productInfo tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+table.productInfo tr:nth-child(even) {
+    background-color: #f4f4f4;
+}
+
+table.productInfo tr:hover {
+    background-color: #f0f0f0;
+}
+
+table.productInfo input {
+    font-size: 1.1rem;
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+    box-sizing: border-box; /* Ensures padding and border are included in the width */
+}
+
+table.productInfo input[type="number"]{
+    width: 10vw;
+}
+
+table.productInfo input:hover {
+    border-color: #007bff; /* Lighter blue when hovered */
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.25);
+}
+
+table.productInfo input[type="text"][readonly] {
+    background-color: #eeeeee; /* Light grey background for readonly inputs */
+    color: #888; /* Dimmed text color for readonly inputs */
+    width: 15vw;
+}
+
+table.productInfo input:focus {
+    outline: none;
+    border-color: #0056b3; /* Darker blue for focus */
+}
+
+.add-product-button {
+    background-color: #4CAF50; /* Green background */
+    color: white; /* White text */
+    padding: 10px 20px; /* Padding around the text */
+    border: none; /* No border */
+    border-radius: 5px; /* Rounded corners */
+    font-family: 'Segoe UI', Arial, sans-serif; /* Font style */
+    font-size: 16px; /* Text size */
+    cursor: pointer; /* Cursor indicates it's clickable */
+    transition: background-color 0.3s, transform 0.2s; /* Smooth transition for hover effects */
+}
+
+.add-product-button:hover {
+    background-color: #45a049; /* Darker shade of green on hover */
+    transform: scale(1.05); /* Slightly increase the size on hover */
+}
+
+.add-product-button:focus {
+    outline: none; /* Remove the focus outline to keep the design clean */
+}
+
+
+/*-------------PRODUCT LIST--------------------*/
+
+.productsList {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+    min-width: 600px; /* Ensuring a minimum width for better visibility */
+}
+
+.productsList th, .productsList td {
+    padding: 12px 20px;
+    text-align: center;
+    border-right: 1px solid #ffffff;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+.productsList th:last-child, .productsList td:last-child {
+    border-right: none;
+}
+
+.productsList thead th {
+    position: sticky;
+    top: 0;
+    background-color: #fafafa;
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-right: 1px solid #f7dada;
+}
+
+.productsList tbody tr:nth-child(odd) {
+    background-color: #f9f9f9; /* Light grey for odd rows */
+}
+
+.productsList tbody tr:nth-child(even) {
+    background-color: #fff; /* White for even rows */
+}
+
+.productsList tbody tr:hover {
+    background-color: #f4f4f8;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) inset;
+}
+
+.productsList tbody td {
+    cursor: pointer;
+}

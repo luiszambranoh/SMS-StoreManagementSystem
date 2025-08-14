@@ -1,0 +1,261 @@
+.container {
+    margin-top: 20px;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    width: 90%;
+    gap: 15px;
+    border: 6px solid #2F4F4F; /* Deep, dark gray border */
+    border-radius: 20px; /* Slightly rounded corners for a softer look */
+}
+
+.tablecontainer {
+    grid-column: 1/3;
+}
+
+.productInfo {
+    grid-column: 1 / 3;
+    display: flex;
+    flex-wrap: wrap;
+    background: #ffffff; /* clean white background */
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    max-width: 900px; /* adjust based on your layout */
+}
+
+.productInfo {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 15px; /* space between grid items */
+    background: #ffffff; /* clean white background */
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    max-width: 600px; /* smaller width for compactness */
+}
+
+.inputbox {
+    display: flex;
+    flex-direction: column; /* Stack label over input */
+}
+
+.inputbox span {
+    font-size: 1.2rem;
+    color: #000000;
+    margin-bottom: 5px;
+}
+
+.inputbox input, select {
+    font-size: 1.1rem;
+
+    padding: 8px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.inputbox input:hover, select:hover {
+    border-color: #0056b3; /* darker blue for focus */
+    box-shadow: 0 0 8px rgba(0, 86, 179, 0.25);
+}
+
+.inputbox input:hover, select:hover {
+    border-color: #007bff; /* lighter blue when hovered */
+}
+
+
+
+
+/*Buttons*/
+
+.buttons {
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+    margin: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn:hover {
+    background-color: #ddd;
+}
+
+.btn i {
+    margin-right: 5px;
+}
+
+.add {
+    background-color: #4CAF50; /* Green */
+    color: white;
+}
+
+.add:hover {
+    background-color: #45a049;
+}
+
+.modify {
+    background-color: #2196F3; /* Blue */
+    color: white;
+}
+
+.modify:hover {
+    background-color: #0b7dda;
+}
+
+.remove {
+    background-color: #f44336; /* Red */
+    color: white;
+}
+
+.remove:hover {
+    background-color: #da190b;
+}
+
+
+/*ADDDD*/
+
+.title {
+    font-size: 2rem;
+    color: black;
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 50%;
+    height: 2px;
+    background-color: #5C677D;
+    transition: width 0.5s ease-out;
+}
+
+.title:hover::after {
+    width: 100%;
+}
+
+/*DIALOG*/
+
+
+/* Base styling for the dialog */
+.custom-dialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: auto;
+    max-width: 500px; /* Limiting max width for better appearance on larger screens */
+    min-width: 300px; /* Minimum width to maintain usability */
+    padding: 20px;
+    background: white;
+    border: 1px solid rgba(0,0,0,0.1);
+    border-radius: 10px; /* Rounded corners for modern look */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    z-index: 1010; /* Above the backdrop */
+    animation: scaleUp 0.3s;
+}
+
+/* Animation for scaling up the dialog */
+@keyframes scaleUp {
+    from { transform: translate(-50%, -50%) scale(0.9); }
+    to { transform: translate(-50%, -50%) scale(1); }
+}
+
+/* Styling for the form inside the dialog */
+.dialog-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Title styling */
+.dialog-title {
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 1.5rem; /* Appropriate sizing for the title */
+}
+
+/* Input box styling */
+.custom-inputbox {
+    margin-bottom: 15px;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-inputbox label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.custom-inputbox input,
+.custom-inputbox select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px; /* Readable text size */
+}
+
+/* Button styling in the action area */
+.dialog-actions {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 10px;
+    padding: 10px;
+}
+
+.dialog-btn {
+    background-color: #ffffff; /* White background */
+    color: #333; /* Dark grey for text */
+    border: 2px solid #d1d1d1; /* Soft grey border */
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: background-color 0.3s, border-color 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center; /* Aligns the icon with the text vertically */
+    font-weight: 500; /* Slightly bolder font */
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Space between icon and text */
+}
+
+.dialog-btn:hover, .dialog-btn:focus {
+    background-color: #e2e2ff; /* Light blue background on hover/focus */
+    border-color: #0056b3; /* Dark blue border on hover/focus */
+    transform: translateY(-2px); /* Slight raise effect */
+}
+
+.dialog-btn:active {
+    transform: translateY(1px); /* Push down effect on click */
+    background-color: #c0c0ff; /* Darker blue when active */
+}
+
+#price::before {
+    content: '$'; /* Define the currency symbol */
+    position: absolute;
+    margin-right: 5px; /* Space between the symbol and the input */
+    /* You may need to adjust positioning depending on your layout */
+    left: 10px;  /* Adjust this value to position the symbol inside or outside the input */
+    background-color: #000000;
+}

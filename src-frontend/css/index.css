@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+* {
+    font-family: 'Roboto', 'Inter';
+    margin: 0;
+    user-select: none;
+}
+
+
+
+.navbar {
+    background-color: #0A192F; /* Dark navy blue */
+    padding: 5px 20px;
+    position: sticky;
+}
+
+.navbar ul {
+    padding: 10px;
+    list-style: none;
+    display: flex;
+    gap: 15px;
+}
+
+.navbar li {
+    background-color: #97b6e2; /* Slightly lighter navy */
+    padding: 10px 20px;
+    border-radius: 25px; /* Rounded corners for a smooth look */
+    transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+.navbar a {
+    color: black;
+    text-decoration: none;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+.navbar li:hover {
+    background-color: #ffeb77; /* Rich gold for hover */
+    transform: translateY(-3px); /* Subtle lift effect */
+    color: #0A192F; /* Dark navy text color on hover for contrast */
+    z-index: 99;
+}
+
+/*DROPDOWN FOR ADMINISTRATION*/
+
+.dropdown-elements {
+    display: none;
+    background-color: #ffffff; /* Soft off-white/blue for a subtle contrast */
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    z-index: 5;
+    overflow: hidden;
+    transition: opacity 0.3s, visibility 0.3s, transform 0.3s;
+}
+
+.dropdown-content{
+    display: block;
+    border-radius: 15px;
+    padding: 10px;
+    transition: 0.4s;
+    margin: 2px;
+}
+
+#dropdown:hover .dropdown-elements{
+    display: block;
+}
+
+.dropdown-elements a:hover {
+    background-color: rgba(246, 255, 121, 0.788);
+}
+
+/*TABLE*/
+
+.tablecontainer {
+    max-height: 70vh;
+    overflow-y: auto;
+    margin: 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    background: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px;
+}
+
+th, td {
+    padding: 12px 20px;
+    text-align: center;
+    border-right: 1px solid #ff0000;
+    transition: background-color 0.2s ease, box-shadow 0.3s ease;
+}
+
+th:last-child, td:last-child {
+    border-right: none;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #ee9c9c;
+    color: #333;
+    font-size: 16px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-right: 1px solid #ccc;
+}
+
+tbody tr {
+    background-color: #fff;
+}
+
+tbody tr:hover {
+    background-color: #f4f4f8;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1) inset; /* Soft shadow inside rows */
+}
+
+tbody td {
+    cursor: pointer;
+}
